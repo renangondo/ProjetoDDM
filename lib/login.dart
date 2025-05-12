@@ -5,10 +5,14 @@ class LoginPage extends StatefulWidget {
   LoginPageState createState() =>  LoginPageState();
 }
 
+String email = "";
+String password = "";
+
 class  LoginPageState extends State <LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
+
       child: SizedBox(
         width: double.infinity,
         height: double.infinity,
@@ -30,7 +34,18 @@ class  LoginPageState extends State <LoginPage> {
             border: OutlineInputBorder()),
           ),
           SizedBox(height: 25),
-          ElevatedButton(onPressed: () {}, child: Text("Login")),
+          ElevatedButton(onPressed: () {
+            if (email == "renangondo@gmail.com" && password == "123") {
+              Navigator.of(context).pushNamed('/home');
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text("Login ou senha inválidos"),
+                  duration: Duration(seconds: 2),
+                ),
+              );
+            }
+          }, child: Text("Login")),
         ],
       ),
     )));

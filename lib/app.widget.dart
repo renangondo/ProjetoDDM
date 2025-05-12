@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_ddm/app_controller.dart';
+import 'package:projeto_ddm/home_page.dart';
 import 'package:projeto_ddm/login.dart';
 
 class AppWidget extends StatelessWidget {
@@ -23,8 +24,12 @@ class AppWidget extends StatelessWidget {
           brightness: Brightness.dark,
         ),
         themeMode: ThemeMode.system,
-        home:  LoginPage(),
-      );
+        initialRoute: '/',
+        routes: {
+          '/': (context) => LoginPage(),
+          '/home': (context) => HomePage(),
+        },
+      ); 
     });
   }
 }
