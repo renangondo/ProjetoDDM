@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class Cadastro extends StatefulWidget {
   @override
-  LoginPageState createState() =>  LoginPageState();
+  CadastroState createState() =>  CadastroState();
 }
 
-String email = "";
-String password = "";
-
-class  LoginPageState extends State <LoginPage> {
+class  CadastroState extends State <Cadastro> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -20,6 +17,12 @@ class  LoginPageState extends State <LoginPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Nome", 
+              border: OutlineInputBorder()),
+          ),
           TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
@@ -35,12 +38,8 @@ class  LoginPageState extends State <LoginPage> {
           ),
           SizedBox(height: 25),
           ElevatedButton(onPressed: () {
-            if (email == "renangondo@gmail.com" && password == "123") {
-              Navigator.of(context).pushNamed('/home');
-            } else {
-              print("Login failed");
-            }
-          }, child: Text("Login")),
+    
+          }, child: Text("Cadastrar")),
         ],
       ),
     )));
